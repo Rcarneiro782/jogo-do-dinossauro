@@ -59,10 +59,26 @@ const createCactus = ()=>{
     
 
 	cactus.style.left = cactusPosition + 'px';
+	let randomTime = (Math.random() * 5000) + 1000;
 	
 	
 	
 	background.appendChild(cactus);
+
+	let leftInterval = setInterval(() => {
+	cactusPosition	-= 10;
+	cactus.style.left = cactusPosition + 'px';
+
+   if(cactusPosition < -60  ){
+	   clearInterval(leftInterval);
+	   background.removeChild(cactus);
+     }else{
+		 cactusPosition -=10;
+		 cactus.style.left = cactusPosition + 'px';
+	 }
+      
+	}, 20);
+	setTimeout(createCactus, randomTime);
 }
 createCactus();
 
