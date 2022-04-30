@@ -50,4 +50,20 @@ const jump = ()=>{
 	}, 20);
 }
 
+
+const createCactus = ()=>{
+	const cactus= document.createElement('div');
+	cactus.classList.add('cactus');
+	let cactusPosition = 1000;
+	let cactusSpeed = 10;
+    
+
+	cactus.style.left = cactusPosition + 'px';
+	
+	
+	
+	background.appendChild(cactus);
+}
+createCactus();
+
 document.addEventListener('keydown', keydownHandler);
